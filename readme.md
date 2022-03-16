@@ -20,6 +20,13 @@ Introduction to coding a game in Love2D.
   * `Ctrl` + `Shift` + `B` -- run build task with `makelove`
 
 
+## Formatter
+
+* I use https://github.com/Koihik/LuaFormatter as Lua formatter
+* You can install it in vscode via https://marketplace.visualstudio.com/items?itemName=Koihik.vscode-lua-format
+* Customize formatting via `lua-format.yaml` (see [config reference](https://github.com/Koihik/LuaFormatter/blob/master/docs/Style-Config.md)).
+
+
 ## Tutorials
 
 * Setting up vscode to develop in Love2D: https://sheepolution.com/learn/book/bonus/vscode
