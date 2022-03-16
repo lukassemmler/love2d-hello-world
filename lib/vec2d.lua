@@ -1,4 +1,5 @@
--- Source: https://github.com/JanBerktold/love2d-helpers/blob/master/Vector2.lua by Jan Berktold, 2013-08-20
+-- Based on https://github.com/JanBerktold/love2d-helpers/blob/master/Vector2.lua by Jan Berktold, 2013-08-20
+-- Inspired by https://docs.unity3d.com/ScriptReference/Vector2.html
 --[[
 
     Vector2.lua
@@ -180,7 +181,20 @@ function Vector2.new(x, y)
         return Vector2.new((secondVector.x - this.x) * alpha + this.x, (secondVector.y - this.y) * alpha + this.x)
     end
 
+    function this.clampMagnitude(maxLength)
+        if this.x == 0 and this.y == 0 then
+            return this
+        end
+        local magnitude = this.getMagnitude()
+        if magnitude <= maxLength then
+            return this
+        end
+        local normalized = this.getUnit()
+        return normalized * maxLength
+    end
+
     return setmetatable(this, vectorTable)
 end
 
 function Vector2.One() return Vector2.new(1, 1) end
+function Vector2.Zero() return Vector2.new(0, 0) end
