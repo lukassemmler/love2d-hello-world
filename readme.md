@@ -1,4 +1,4 @@
-# hello-word
+# Hello World
 
 Introduction to coding a game in Love2D.
 
