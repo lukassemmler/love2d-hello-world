@@ -16,17 +16,28 @@ Introduction to coding a game in Love2D.
 
 * `love .` -- run current directory with love2d
 * `python -m makelove` -- run build tool [makelove](https://pypi.org/project/makelove/)
-* VS Code specific:
-  * `Ctrl` + `Shift` + `B` -- run build task with `makelove`
+
+
+## VS Code 
+
+### Shortcuts
+
+* `Ctrl` + `Shift` + `B` -- run build task with `makelove`
+
+
+### Required Plugins
+
+* [Lua Language Server](https://marketplace.visualstudio.com/items?itemName=sumneko.lua) by sumneko
+* [vscode-lua-format](https://marketplace.visualstudio.com/items?itemName=Koihik.vscode-lua-format) by Koihik
+* [Local Lua Debugger](https://marketplace.visualstudio.com/items?itemName=tomblind.local-lua-debugger-vscode) by Tom Blind
 
 
 ## Formatter
 
-* I use https://github.com/Koihik/LuaFormatter as Lua formatter
-* You can install it in vscode via https://marketplace.visualstudio.com/items?itemName=Koihik.vscode-lua-format
+* I use https://github.com/Koihik/LuaFormatter as Lua formatter (via the VS Code plugin).
 * Customize formatting via `lua-format.yaml` (see [config reference](https://github.com/Koihik/LuaFormatter/blob/master/docs/Style-Config.md)).
 
 
-## Tutorials
+## References
 
 * Setting up vscode to develop in Love2D: https://sheepolution.com/learn/book/bonus/vscode
