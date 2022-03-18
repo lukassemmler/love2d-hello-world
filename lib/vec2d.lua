@@ -153,7 +153,9 @@ local vectorTable = {
         return Vector2.new(this.x / x, this.y / y)
     end,
 
-    __tostring = function(this) return ('Vector2 %f, %f'):format(this.x, this.y) end
+    __tostring = function(this)
+        return ('Vector2 %f, %f'):format(this.x, this.y)
+    end
 
 }
 
@@ -163,32 +165,37 @@ function Vector2.new(x, y)
     this.x = x or 0
     this.y = y or 0
 
-    function this.unpack() return this.x, this.y end
+    function this.unpack()
+        return this.x, this.y
+    end
 
-    function this.getMagnitude() return sqrt(this.x ^ 2 + this.y ^ 2) end
+    function this.getMagnitude()
+        return sqrt(this.x ^ 2 + this.y ^ 2)
+    end
 
     function this.getUnit()
         local magnitude = this.getMagnitude()
         return this / magnitude
     end
 
-    function this.getDistance(secondVector) return (this - secondVector).getMagnitude() end
+    function this.getDistance(secondVector)
+        return (this - secondVector).getMagnitude()
+    end
 
-    function this.inv() return Vector2.new(this.x * -1, this.y * -1) end
+    function this.inv()
+        return Vector2.new(this.x * -1, this.y * -1)
+    end
 
     function this.lerp(secondVector, alpha)
         local alpha = type(alpha) == 'number' and alpha or 0
         return Vector2.new((secondVector.x - this.x) * alpha + this.x, (secondVector.y - this.y) * alpha + this.x)
     end
 
+    -- My added methods vvvvv
     function this.clampMagnitude(maxLength)
-        if this.x == 0 and this.y == 0 then
-            return this
-        end
+        if this.x == 0 and this.y == 0 then return this end
         local magnitude = this.getMagnitude()
-        if magnitude <= maxLength then
-            return this
-        end
+        if magnitude <= maxLength then return this end
         local normalized = this.getUnit()
         return normalized * maxLength
     end
@@ -196,5 +203,9 @@ function Vector2.new(x, y)
     return setmetatable(this, vectorTable)
 end
 
-function Vector2.One() return Vector2.new(1, 1) end
-function Vector2.Zero() return Vector2.new(0, 0) end
+function Vector2.One()
+    return Vector2.new(1, 1)
+end
+function Vector2.Zero()
+    return Vector2.new(0, 0)
+end
